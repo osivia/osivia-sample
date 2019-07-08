@@ -28,13 +28,6 @@ public interface SampleService {
     SampleWindowProperties getWindowProperties(PortalControllerContext portalControllerContext) throws PortletException;
 
 
-    /**
-     * Set search window properties.
-     *
-     * @param portalControllerContext portal controller context
-     * @param windowProperties        search window properties
-     */
-    void setWindowProperties(PortalControllerContext portalControllerContext, SampleWindowProperties windowProperties) throws PortletException;
 
 
     /**
@@ -52,7 +45,14 @@ public interface SampleService {
      * @param portalControllerContext portal controller context
      * @return path
      */
-    String getViewPath(PortalControllerContext portalControllerContext) throws PortletException;
+    String getViewPath(PortalControllerContext portalControllerContext, SampleForm form)  throws PortletException;
 
+    /**
+     * Get view path.
+     *
+     * @param portalControllerContext portal controller context
+     * @return path
+     */
+    void proceedNext(PortalControllerContext portalControllerContext,SampleForm form) throws PortletException;
 
 }

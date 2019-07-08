@@ -3,6 +3,7 @@ package org.osivia.sample.procedure.portlet.controller;
 import org.apache.commons.lang.StringUtils;
 import org.osivia.portal.api.context.PortalControllerContext;
 import org.osivia.sample.procedure.portlet.model.SampleForm;
+import org.osivia.sample.procedure.portlet.model.SampleView;
 import org.osivia.sample.procedure.portlet.service.SampleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -50,7 +51,7 @@ public class SampleController {
         // Portal Controller context
         PortalControllerContext portalControllerContext = new PortalControllerContext(this.portletContext, request, response);
   
-        return this.service.getViewPath(portalControllerContext);
+        return this.service.getViewPath(portalControllerContext, form);
     }
 
 
@@ -61,16 +62,12 @@ public class SampleController {
      * @param response action response
      * @param form     search form model attribute
      */
-    @ActionMapping("search")
-    public void search(ActionRequest request, ActionResponse response, @ModelAttribute("form") SampleForm form) throws PortletException, IOException {
+    @ActionMapping("sendMail")
+    public void sendMail(ActionRequest request, ActionResponse response, @ModelAttribute("form") SampleForm form) throws PortletException, IOException {
         // Portal Controller context
         PortalControllerContext portalControllerContext = new PortalControllerContext(this.portletContext, request, response);
         
-// 
-//        // Search redirection URL
-//        String url = this.service.getSearchRedirectionUrl(portalControllerContext, form);
-//        if( url != null)
-//           response.sendRedirect(url);
+        this.service.proceedNext(portalControllerContext, form);
     }
 
 

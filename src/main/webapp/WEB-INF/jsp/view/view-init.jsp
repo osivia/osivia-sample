@@ -6,7 +6,7 @@
 <%@ page isELIgnored="false" %>
 
 
-<portlet:actionURL name="init" var="initUrl"/>
+<portlet:actionURL name="sendMail" var="initUrl"/>
 
 <c:set var="namespace"><portlet:namespace/></c:set>
 
@@ -18,7 +18,7 @@
             <div class="input-group border rounded">
             
 
-                 <form:input path="value" type="search" placeholder="${placeholder} ${form.folderName}"
+                 <form:input path="value" type="search" placeholder="${placeholder}"
                             cssClass="form-control border-0"></form:input>
                 <input type="submit" class="d-none"/>
             </div>

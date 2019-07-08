@@ -10,6 +10,7 @@ import org.apache.commons.lang.StringUtils;
 public enum SampleView {
 
     INIT,
+    SEND,
     CONFIRM,
     END;
  
