@@ -16,7 +16,7 @@ public interface SampleService {
     /**
      * Search view window property.
      */
-    String VIEW_WINDOW_PROPERTY = "osivia.search.view";
+    public static String VIEW_WINDOW_PROPERTY = "osivia.search.view";
 
 
     /**
@@ -48,11 +48,19 @@ public interface SampleService {
     String getViewPath(PortalControllerContext portalControllerContext, SampleForm form)  throws PortletException;
 
     /**
-     * Get view path.
+     * Init
      *
      * @param portalControllerContext portal controller context
      * @return path
      */
-    void proceedNext(PortalControllerContext portalControllerContext,SampleForm form) throws PortletException;
+    void proceedInit(PortalControllerContext portalControllerContext,SampleForm form) throws PortletException;
+    
+    /**
+     * Init
+     *
+     * @param portalControllerContext portal controller context
+     * @return path
+     */
+    void proceedPassword(PortalControllerContext portalControllerContext,SampleForm form) throws PortletException;    
 
 }

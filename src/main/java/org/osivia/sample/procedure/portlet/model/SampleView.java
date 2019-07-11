@@ -11,6 +11,7 @@ public enum SampleView {
 
     INIT,
     SEND,
+    PASSWORD,
     CONFIRM,
     END;
  

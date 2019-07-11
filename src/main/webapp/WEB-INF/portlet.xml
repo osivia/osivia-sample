@@ -30,5 +30,21 @@
             <title>Sample procedure</title>
         </portlet-info>
     </portlet>
+    
+    
+      <portlet>
+        <portlet-name>osivia-sample-procedure-plugin</portlet-name>
+        <portlet-class>org.osivia.sample.procedure.plugin.SamplePlugin</portlet-class>
+
+        <expiration-cache>180</expiration-cache>
+
+        <supports>
+            <mime-type>text/html</mime-type>
+        </supports>
+
+        <portlet-info>
+            <title>Forum plugin</title>
+        </portlet-info>
+    </portlet>
 
 </portlet-app>

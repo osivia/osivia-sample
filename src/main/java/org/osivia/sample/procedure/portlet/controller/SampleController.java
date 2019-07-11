@@ -67,9 +67,30 @@ public class SampleController {
         // Portal Controller context
         PortalControllerContext portalControllerContext = new PortalControllerContext(this.portletContext, request, response);
         
-        this.service.proceedNext(portalControllerContext, form);
+        this.service.proceedInit(portalControllerContext, form);
+        
     }
 
+    
+    
+
+    /**
+     * Search action mapping.
+     *
+     * @param request  action request
+     * @param response action response
+     * @param form     search form model attribute
+     */
+    @ActionMapping("submitPassword")
+    public void submitPassword(ActionRequest request, ActionResponse response, @ModelAttribute("form") SampleForm form) throws PortletException, IOException {
+        // Portal Controller context
+        PortalControllerContext portalControllerContext = new PortalControllerContext(this.portletContext, request, response);
+        
+
+        this.service.proceedPassword(portalControllerContext, form);        
+    }
+
+    
 
     /**
      * Get search form model attribute.

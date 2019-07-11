@@ -6,6 +6,7 @@ import javax.portlet.PortletException;
 import org.osivia.portal.api.internationalization.IBundleFactory;
 import org.osivia.portal.api.internationalization.IInternationalizationService;
 import org.osivia.portal.api.locator.Locator;
+import org.osivia.portal.api.notifications.INotificationsService;
 import org.osivia.portal.api.portlet.PortletAppUtils;
 import org.osivia.portal.api.urls.IPortalUrlFactory;
 import org.osivia.portal.core.cms.ICMSServiceLocator;
@@ -20,6 +21,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 import fr.toutatice.portail.cms.nuxeo.api.CMSPortlet;
+import fr.toutatice.portail.cms.nuxeo.api.forms.IFormsService;
+import fr.toutatice.portail.cms.nuxeo.api.services.NuxeoServiceFactory;
 import fr.toutatice.portail.cms.nuxeo.api.services.dao.DocumentDAO;
 
 /**
@@ -107,13 +110,25 @@ public class SampleConfiguration extends CMSPortlet implements PortletConfigAwar
 
 
     /**
-     * Get document DAO.
-     *
-     * @return DAO
+     * Get forms service.
+     * 
+     * @return forms service
      */
     @Bean
-    public DocumentDAO getDocumentDao() {
-        return DocumentDAO.getInstance();
+    public IFormsService getFormsService() {
+        return NuxeoServiceFactory.getFormsService();
+    }
+
+
+
+    /**
+     * Get notifications service.
+     * 
+     * @return notification service
+     */
+    @Bean
+    public INotificationsService getNotificationService() {
+        return Locator.findMBean(INotificationsService.class, INotificationsService.MBEAN_NAME);
     }
 
     

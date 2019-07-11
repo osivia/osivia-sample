@@ -133,15 +133,35 @@
                     <version>2.10</version>
                 </plugin>
                 
-                <!-- Assembly -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-assembly-plugin</artifactId>
-                    <version>2.6</version>
-                </plugin>
+
             
             </plugins>
         </pluginManagement>
+        
+        <plugins>
+                 <!-- Assembly -->
+					<plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>zip-resources</id>
+                                <phase>process-resources</phase>
+                                <configuration>
+                                    <descriptors>
+                                        <descriptor>src/main/assembly/assembly.xml</descriptor>
+                                    </descriptors>
+                                    <finalName>export</finalName>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                </configuration>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>       
+            </plugins>        
+        
     </build>   
     
     

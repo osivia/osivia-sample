@@ -14,11 +14,11 @@
 <div class="ml-3">
     <form:form id="${namespace}-form" action="${initUrl}" method="post" modelAttribute="form">
         <div class="form-group mb-0">
-            <form:label path="value" cssClass="sr-only"><op:translate key="SAMPLE_INIT_VALUE_LABEL"/></form:label>
+            <form:label path="mail" cssClass="sr-only"><op:translate key="SAMPLE_INIT_VALUE_LABEL"/></form:label>
             <div class="input-group border rounded">
             
 
-                 <form:input path="value" type="search" placeholder="${placeholder}"
+                 <form:input path="mail" type="search" placeholder="${placeholder}"
                             cssClass="form-control border-0"></form:input>
                 <input type="submit" class="d-none"/>
             </div>
